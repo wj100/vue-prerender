@@ -1,0 +1,440 @@
+body {
+    // height: 100vh;
+    background-color: #f2f5fa;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        width: 1300px;
+    }
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+#register {
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 78px;
+    // bottom: 0;
+    margin-top: 78px !important;
+    width: 970px;
+    height: 630px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-col-start {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.reg-step {
+    width: 540px;
+}
+
+.reg-info {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #51555C;
+}
+
+.formStep2__agreement {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #676b70;
+
+    a {
+        color: #155bd4;
+    }
+}
+
+.formStep3 {
+    width: 401px;
+}
+
+.formStep3__account {
+    input {
+        border-right: none;
+    }
+
+    .el-input-group__append {
+        position: relative;
+        background-color: #fff;
+        border-left: none;
+        padding: 0 16px;
+        color: #999;
+    }
+
+    .el-input-group__append::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 20px;
+        background-color: #DCDCDC;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+
+    .account-tips {
+        position: absolute;
+        font-size: 12px;
+        color: #51555C;
+        left: 10px;
+        top: 42px;
+    }
+}
+
+.formStep2,
+.formStep3 {
+    .el-form-item__error {
+        background-color: #fff;
+        line-height: 16px;
+        padding-right: 100px
+    }
+
+    input::placeholder {
+        color: #999;
+    }
+
+    .el-input {
+        height: 48px;
+        width: 304px;
+    }
+
+    .el-input__inner {
+        height: 48px;
+    }
+
+    .el-button {
+        width: 400px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .el-form-item__label {
+        color: #51555C;
+        font-size: 16px;
+    }
+
+    .el-radio__label {
+        font-size: 16px;
+        color: #51555C
+    }
+
+    .el-form-item {
+        margin-bottom: 0;
+        margin-top: 34px;
+
+        label::before {
+            display: none
+        }
+    }
+
+    .formStep2__domain {
+        margin-top: 18px;
+    }
+
+    .formStep2__hasdomain {
+        margin-top: 20px;
+    }
+
+    .formStep2__domain--p {
+        margin-top: 8px;
+
+        p {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 30px;
+            color: #51555C;
+        }
+    }
+
+    .formStep2__btn {
+        margin-top: 34px;
+    }
+
+    .formStep3__btns {
+        margin-top: 34px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .el-button {
+            width: 190px;
+        }
+    }
+}
+
+.thanks-block {
+    h1 {
+        margin: 60px 0 26px 0;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 24px;
+        color: #51555C;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 30px;
+        color: #51555C;
+    }
+
+    .border-t {
+        margin-top: 18px;
+        width: 100%;
+        border-top: 1px solid #eee;
+
+    }
+
+    .thanks-block__companySize {
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+
+        .el-radio__input {
+            display: none;
+        }
+
+        .el-radio {
+            // width: 54px;
+            height: 34px;
+            background-color: #fff;
+            border: 1px solid #DFE3E6;
+            border-radius: 0;
+            color: #51555C;
+            font-size: 14px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 12px;
+            margin: 0 !important;
+        }
+
+        .is-checked {
+            background-color: #2C70FF;
+
+            .el-radio__label {
+                color: #fff;
+            }
+        }
+
+        .el-radio__label {
+            padding: 0;
+        }
+    }
+
+    .thank-block__oldEmail {
+
+        .el-input {
+            width: 400px;
+            height: 38px;
+        }
+
+        .el-input__inner {
+            border-radius: 0;
+        }
+    }
+
+    .thank-block__feat {
+        // background-color: rebeccapurple;
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .el-checkbox {
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            .el-checkbox__input.is-checked+.el-checkbox__label {
+                color: #51555C;
+            }
+
+            .el-checkbox__label {
+                color: #51555C;
+                padding-left: 6px;
+            }
+        }
+
+        .thank-block__feat-other {
+            flex: 1;
+            border: none;
+            border-bottom: 1px solid #DCDCDC;
+        }
+    }
+
+    .thanks-block__btn {
+        margin-top: 28px;
+        width: 400px;
+        height: 48px;
+    }
+}
+
+.success-block {
+    width: 400px;
+    padding-top: 50px;
+    // background-color: #eee;
+
+    h1 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 40px;
+        color: #51555C;
+    }
+
+    .sucess__checkService {
+        p {
+            margin-top: 34px;
+            color: #51555C;
+            margin-bottom: 22px;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        .checkService-group {
+            display: flex;
+            flex-wrap: wrap;
+
+            .el-checkbox {
+                margin-right: 15px;
+                margin-bottom: 24px;
+
+                .el-checkbox__label {
+                    color: #51555C;
+                    font-size: 14px;
+                }
+
+                .el-checkbox__input.is-checked+.el-checkbox__label {
+                    color: #51555C;
+                }
+            }
+
+            .el-checkbox:nth-child(3n+1) {
+                // background-color: #666;
+                width: 88px;
+            }
+
+            .el-checkbox:nth-child(3n+2) {
+                // background-color: #2C70FF;
+                width: 160px;
+            }
+
+            .el-checkbox:nth-child(3n+3) {
+                // background-color: red;
+                width: 80px;
+            }
+        }
+
+        .el-button {
+            width: 400px;
+            height: 48px;
+            font-size: 16px;
+        }
+    }
+
+    .el-checkbox__label {
+        font-size: 16px;
+        color: #51555C;
+        padding-left: 8px;
+    }
+
+    .el-button {
+        margin-top: 38px;
+        width: 400px;
+        height: 48px;
+        font-size: 16px;
+    }
+}
+
+/*                                              重写steps                                         */
+#register {
+    .el-steps {
+        justify-content: center;
+        margin-top: 60px;
+        align-items: center;
+    }
+
+    .el-step__head {}
+
+    .el-step__line {
+        top: 22px !important;
+    }
+
+    .is-finish {
+        .el-step__line-inner {
+            background: #2c70ff;
+        }
+    }
+
+    .el-step__icon {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+    }
+
+    .is-finish .is-text {
+        background-color: #2C70FF;
+        color: #fff;
+    }
+
+    .is-process .is-text {
+        background-color: #fff;
+        border: 1px solid #DCDCDC;
+        color: #DCDCDC;
+    }
+
+    .el-step__main {
+        .el-step__title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .is-process {
+            color: #DCDCDC;
+        }
+    }
+}
+
+/*                                              重写steps end                                        */
+footer {
+    width: 100%;
+    margin-top: 28px;
+
+    p {
+        font-size: 14px;
+        color: #7D8085;
+        display: flex;
+        justify-content: center;
+        line-height: 28px;
+
+        a {
+            color: #7D8085;
+        }
+    }
+}

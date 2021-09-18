@@ -1,0 +1,141 @@
+@width : 500px;
+@color : #333;
+@fontSize: 16px;
+@blue: #2C70FF;
+
+.mt10 {
+    margin-top: 10px;
+    line-height: normal !important;
+}
+
+.mt14 {
+    margin-top: 14px;
+    line-height: normal !important;
+}
+
+.mt20 {
+    margin-top: 20px;
+    line-height: normal !important;
+}
+
+.mt24 {
+    line-height: normal !important;
+    margin-top: 24px;
+}
+
+.flex {
+    display: flex;
+}
+
+.button-hover:hover {
+    opacity: .9;
+}
+
+.button-hover:active {
+    opacity: .5;
+}
+
+[role='customButton'] {
+    background: @blue;
+    border-radius: 4px;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+}
+
+[role='customButton']:hover {
+    cursor: pointer;
+    // opacity: .8;
+}
+
+[role='customButton']:active {
+    opacity: .5;
+}
+
+/* 按钮效果 */
+.button-effect {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+}
+
+.button-effect:before {
+    content: ' ';
+    position: absolute;
+    background: #fff;
+    width: 25px;
+    height: 50px;
+    top: 0;
+    left: -45px;
+    opacity: 0.2;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+
+.button-effect:hover {
+    background: #367af8;
+}
+
+.button-effect:hover:before {
+    width: 45px;
+    left: 205px;
+}
+
+/* 卡片效果 */
+.card-effect:hover {
+    cursor: auto;
+    transform: scale(1.03);
+    transition: all .3s;
+    box-shadow: 15px 0 15px -15px #dedede, -15px 0 15px -15px #dedede
+}
+
+/* 吸顶动画 */
+@keyframes headerKeyframes {
+    from {
+        transform: translateY(30px)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
+/* flex集合 */
+.item-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgc-g {
+    background-color: #FCFCFE;
+}
+
+.f14 {
+    font-size: 14px !important;
+}
+
+/* 表格border */
+.b-bottom {
+    border-bottom: 1px solid #eee;
+}
+
+.b-left,
+.b-left+div,
+.b-left+span {
+    border-left: 1px solid #eee;
+}
+
+.b-left~div,
+.b-left~span {
+    border-right: 1px solid #eee;
+}
