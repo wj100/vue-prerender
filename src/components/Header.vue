@@ -1,23 +1,6 @@
 <template>
-  <header class="flex">
-    <div class="header-box flex">
-      <div class="header__slogan flex">
-        <img src="../assets/image/wylogo.png" alt />
-        <span>|</span>
-        <span>自主域名</span>
-        <span>企业专属</span>
-      </div>
-      <div class="header__buttons flex">
-        <a
-          href="https://qiye.163.com/login/?from=ym"
-          target="_blank"
-          class="button-hover"
-          id="home_login"
-        >登录</a>
-        <span>|</span>
-        <span data-try-target="顶部导航" class="button-hover">试用专业版</span>
-      </div>
-    </div>
+  <header class="header flex-center">
+      头部
   </header>
 </template>
 
@@ -31,9 +14,6 @@ export default {
 </script>
 
 <style scoped lang='less'>
-.flex {
-  display: flex;
-}
 /* 头部样式 */
 header {
   // position: absolute;
@@ -86,5 +66,8 @@ header {
       font-size: 16px;
     }
   }
+}
+.header{
+    color: #fff;
 }
 </style>

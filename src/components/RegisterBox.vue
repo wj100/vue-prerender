@@ -1,35 +1,7 @@
 <template>
   <div id="g3">
-    <p class="g3-title">注册免费企业邮</p>
-    <el-form class="g3-form" :rules="rules" ref="form" :model="form">
-      <el-form-item prop="company">
-        <el-input class="g3-form__company" v-model.trim="form.company" placeholder="请输入企业（团体）名称"></el-input>
-      </el-form-item>
-      <el-form-item prop="phone">
-        <el-input placeholder="请在此输入手机号" v-model="form.phone"></el-input>
-      </el-form-item>
-      <el-form-item class="g3-form__code" prop="code">
-        <el-input placeholder="请输入验证码" v-model.trim="form.code">
-          <template slot="append">
-            <span v-if="countDown">{{countDown}}S后再试</span>
-            <span v-else @click="getValidateCode">获取验证码</span>
-          </template>
-        </el-input>
-      </el-form-item>
-      <el-button
-        type="primary"
-        class="g3-form__submit"
-        @click="onSubmit('form')"
-        :loading="btnLoading"
-      >{{btnLoading?'信息提交中':'同意协议并注册'}}</el-button>
-    </el-form>
-    <p class="g3-agreement">
-      提交即代表同意
-      <a target="_blank" href="https://qiye.163.com/html/service.html">《网易企业邮箱服务条款》</a>
-      和
-      <a target="_blank" href="http://gb.corp.163.com/gb/legal.html">《隐</a>
-      <a target="_blank" href="http://gb.corp.163.com/gb/legal.html">私政策》</a>
-    </p>
+      <p>注册组件</p>
+       <el-button type="primary" @click="gotoRegister">注册页</el-button>
   </div>
 </template>
 <script>
@@ -65,11 +37,6 @@ export default {
             message: '不能包含特殊字符',
             trigger: 'blur',
           },
-          // {
-          // 	pattern: /^[^\s]+$/,
-          // 	message: '不能包含空格',
-          // 	trigger: 'blur',
-          // },
         ],
         phone: [
           {
@@ -99,101 +66,13 @@ export default {
       },
     };
   },
-  methods: {
-    handleGetCode(res) {
-      if (res.resultCode === 200) {
-        this.$message.success('验证码发送成功');
-        this.countDown = 60;
-        const c = setInterval(() => {
-          if (this.countDown === 1) {
-            clearInterval(c);
-            this.captchaIns.refresh();
-          }
-          this.countDown -= 1;
-        }, 1000);
-      } else if (res.resultCode === 308) {
-        this.captchaIns && this.captchaIns.popUp();
-      } else {
-        this.$message.error(res.msg || '网络异常，请刷新重试');
-      }
-    },
-    getValidateCode() {
-      this.$refs['form'].validateField('phone', (error) => {
-        if (!error) {
-          //   const params = { mobile: this.form.phone };
-          //   $api.getCode(params).then((res) => {
-          //     this.handleGetCode(res);
-          //   });
-        }
-      });
-    },
-    onSubmit(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          //DATracker.track('ym163_register', { target: 'Verification', desc: '同意协议并注册' });
-          //   const params = {
-          //     mobile: this.form.phone,
-          //     corpName: this.form.company,
-          //     code: this.form.code,
-          //   };
-          this.btnLoading = true;
-          //   $api.agreeReg(params).then((res) => {
-          //     this.btnLoading = false;
-          //     if (res.resultCode === 200) {
-          //       const { phone, company, code } = this.form;
-          //       const us = `phone=${phone}&company=${company}&code=${code}`;
-          //       location.href = '/register.html?' + encodeURIComponent(us);
-          //       /* 本地存储传参 */
-          //       sessionStorage.setItem('register_info', us);
-          //     } else {
-          //       this.$message.error(res.msg);
-          //     }
-          //   });
-          // location.pathname='/register.html'
-        } else {
-          console.log('error submit!!');
-          return false;
-        }
-      });
-    },
-    onSuccess() {
-      this.msg = 'login success';
-    },
-    onFail() {
-      this.msg = '';
-    },
-    onRefresh() {
-      this.msg = '';
+   methods: {
+    gotoRegister() {
+      this.$router.push('/register');
     },
   },
   mounted() {
-    //     initNECaptcha(
-    //       {
-    //         element: '#g3',
-    //         captchaId: '2e95e41aa7b041ebbd57071dee39b51e',
-    //         width: '320px',
-    //         mode: 'popup',
-    //         onVerify: (err, data) => {
-    //           if (err) return; // 当验证失败时，内部会自动refresh方法，无需手动再调用一次
-    //           // 点击登录按钮后可调用服务端接口，以下为伪代码，仅作示例用
-    //           const params = {
-    //             mobile: this.form.phone,
-    //             NECaptchaValidate: data.validate,
-    //           };
-    //           $api.getCode(params).then((res) => {
-    //             // this.captchaIns.refresh()
-    //             this.handleGetCode(res);
-    //           });
-    //         },
-    //       },
-    //       (onload = (instance) => {
-    //         this.captchaIns = instance;
-    //       }),
-    //       (onerror = (err) => {
-    //         console.warn(err);
-    //       })
-    //     );
-  },
+  }
 };
 </script>
 
@@ -204,6 +83,7 @@ export default {
   padding: 60px;
   background-color: #fff;
   right: 0;
+  border: 1px solid blue;
 }
 
 .g3-title {
